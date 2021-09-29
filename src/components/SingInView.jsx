@@ -62,9 +62,9 @@ const SingInView = ({
                             <InputLabel htmlFor="outlined-age-native-simple">Role</InputLabel>
                                 <Select native label="Role" value={roles} onChange={handleRole}>   
                                     <option aria-label="None" value="" />
-                                    <option value='user'>user</option>
+                                    <option value='Customer'>Customer</option>
                                     <option value='Admin'>Admin</option>
-                                    <option value='moderator'>moderator</option>
+                                    <option value='Moderator'>Moderator</option>
                                 </Select>
                         </FormControl>
                         <TextField 

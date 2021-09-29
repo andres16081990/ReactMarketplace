@@ -1,4 +1,5 @@
 import { createContext, useEffect, useState } from 'react';
+import ROLES from '../constants/roles.users';
 import apidataMarketplace from '../services/authentication.services';
 
 
@@ -10,6 +11,37 @@ export const AuthContextProvider = ({children}) =>{
     const [token, setToken] = useState();
     const [userId, setUserId] = useState();
     const [userRole, setUserRole] = useState();
+    const [error, setError] = useState();
+    const [roleValidation, setRoleValidation] = useState(false);
+
+
+    useEffect(() => {
+        const storeRoles = async () =>{
+            const endPoint = `/role/roles`;
+            const options = {
+                method: `GET`,
+                headers: {
+                    'Content-Type' : 'application/json'
+                }
+            };
+            try {
+                const response = await fetch(`${apidataMarketplace}${endPoint}`,options);
+                const data = await response.json();
+                data.forEach(rol=>localStorage.setItem(rol.name,rol._id));
+            } catch (error) {
+                setError(error)
+            }
+        };
+        storeRoles();
+    }, [fetchResponse]);
+
+    const RoleValidation = () =>{
+        const admin = localStorage.getItem(ROLES.Admin);
+        const userRole = localStorage.getItem('role');
+        const adminValidation = admin === userRole;
+        adminValidation ? setRoleValidation(true) : setRoleValidation(false)
+    };
+    
 
 
     //Endpoints
@@ -48,7 +80,8 @@ export const AuthContextProvider = ({children}) =>{
     }
 
     useEffect(() => {
-        tokenValidator()
+        tokenValidator();
+        RoleValidation();
     }, [fetchResponse]);
 
 
@@ -67,21 +100,21 @@ export const AuthContextProvider = ({children}) =>{
     const logInUser = async(ObjectFromLogin) =>{
 
         const dataFromLogin = ObjectFromLogin;        
-         const options = {
-             method: 'POST',
-             headers:{
-                 'Content-type': 'application/json',
-             },
-             body: JSON.stringify(dataFromLogin)
-         };
+        const options = {
+            method: 'POST',
+            headers:{
+                'Content-type': 'application/json',
+            },
+            body: JSON.stringify(dataFromLogin)
+        };
 
-         try {
-            const responseLogIn = await fetch(`${apidataMarketplace}${login}`,options);
-            const resLogInData = await responseLogIn.json();
-            fetchResponset(resLogInData);
-         } catch (error) {
-            console.log(error) 
-         }
+        try {
+        const responseLogIn = await fetch(`${apidataMarketplace}${login}`,options);
+        const resLogInData = await responseLogIn.json();
+        fetchResponset(resLogInData);
+        } catch (error) {
+        console.log(error) 
+        }
     }
     
     // sing in user Request
@@ -102,7 +135,8 @@ export const AuthContextProvider = ({children}) =>{
             
         } catch (error) {
             console.log(error)
-        }             
+        }
+        
     }
     
 
@@ -114,11 +148,12 @@ export const AuthContextProvider = ({children}) =>{
         user,
         token,
         userId,
-        userRole
+        userRole,
+        roleValidation
     }
 
     
-
+    if(error) return <div>Ups...error</div>
     return(
         <AuthContext.Provider value={value} >
             {children}

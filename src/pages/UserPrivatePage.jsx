@@ -18,7 +18,6 @@ const UserPrivatePage = ()=>{
 
 
     const {token,userId} = useContext(AuthContext);
-
     
     useEffect(() => {
 
