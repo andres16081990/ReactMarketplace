@@ -1,0 +1,466 @@
+body{
+    background-color: #ffffff;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100%25' height='100%25' %3E%3Cdefs%3E%3ClinearGradient id='a' x1='0' x2='0' y1='0' y2='1' gradientTransform='rotate(162,0.5,0.5)'%3E%3Cstop offset='0' stop-color='%236FA0C6'/%3E%3Cstop offset='1' stop-color='%2325273C'/%3E%3C/linearGradient%3E%3C/defs%3E%3Cpattern id='b' width='8' height='8' patternUnits='userSpaceOnUse'%3E%3Ccircle fill='%23ffffff' cx='4' cy='4' r='4'/%3E%3C/pattern%3E%3Crect width='100%25' height='100%25' fill='url(%23a)'/%3E%3Crect width='100%25' height='100%25' fill='url(%23b)' fill-opacity='0.05'/%3E%3C/svg%3E");
+    background-attachment: fixed;
+}
+.Navlinks{
+    color: #ffff;
+    text-decoration: none;
+}
+.navBox{
+    width: 100%;
+}
+.NavList{
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+}
+.NavItems{
+    margin: 0% 2%;
+}
+.NavListSing{
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+    margin-left: 63%;
+}
+/* this is logInStyles Component */
+.logInDiv{
+    width: 35%;
+    height: 30% ;
+    margin-top: 3%;
+    margin-left: 32%;
+}
+.cardLogin{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding:10% 
+}
+.cardLoginContent{
+    display: grid;
+    grid-template-rows: repeat(3,1fr);
+    gap: 7%;
+    margin-bottom: 10%;
+}
+.cardLoginContent > h2{
+    color: darkblue;
+    margin-top: -5%;
+    margin-bottom: 13%;
+}
+
+.fieldsInput{
+    width: 350px;
+}
+
+.singInDiv{
+    width: 35%;
+    height: 30% ;
+    margin-top: 3%;
+    margin-left: 32%;
+}
+.cardSingin{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding:10% 
+}
+.cardSinginContent{
+    display: grid;
+    grid-template-rows: repeat(3,1fr);
+    gap: 5%;
+    margin-bottom: 10%;
+    margin-top: -15%;
+}
+.cardSinginContent > h2{
+    height: 30px;
+    color: darkblue;
+}
+.cardAcctionsSingin{
+    margin-top: 60%;
+    display: flex;
+}
+
+
+/* product Page Hero slider */
+.heroContainer{
+    display: flex;
+    justify-content: center;
+    margin-top: 1%;
+}
+
+.image{
+    width: 1100px;
+    height: 350px; 
+    border-radius: 10px;
+}
+.left-arrow{
+    position: absolute;
+    top: 50%;
+    right: 32px;
+    font-size: 3rem;
+    color: transparent;
+    z-index: 10;
+    user-select: none;
+    pointer-events: none;
+}
+.right-arrow{
+    position: absolute;
+    top: 50%;
+    left: 32px;
+    font-size: 3rem;
+    color: transparent;
+    z-index: 10;
+    user-select: none;
+    pointer-events: none;
+}
+
+/* products container styles */
+
+.cardDiv{
+    margin-left: 10%;
+    width: 80%;
+    height: auto;
+    display: grid;
+    grid-template-columns: repeat(4 ,1fr);
+    gap: 2%;
+    margin-top:2%;
+    margin-bottom: 5%;
+}
+
+.carView{
+    grid-column: auto;
+    height: 500px;
+}
+
+.productsCategory{
+    margin-top: 2%;
+    width: 20%;
+    justify-content: center;
+    margin-left: 47%;
+}
+
+/* disble butons */
+
+.LogoutDisable{
+    display: none;
+    pointer-events: none;
+}
+
+/* profileContainer */
+
+.hero-container {
+    width:300px;
+	display: flex;
+    margin-left: 42%;
+}
+
+.main-container {
+	width: 270px;
+	height: 540px;
+	position: relative;
+	margin: 0 20px;
+    margin-top: 20px;
+}
+
+.avatar-container {
+	width: 230px;
+	position: absolute;
+	top: 0;
+	left: 20px;
+	z-index: 9999;
+}
+
+.avatar {
+	width: 100%;
+    border-radius: 50%;
+	box-shadow: 0 5px 20px 3px rgba(0, 0, 0, 0.6);
+}
+
+.profile-info {
+	background: #fff;
+	width: 270px;
+	height: 450px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	border-radius: 5px;
+	position: absolute;
+	box-shadow: 0 5px 20px 3px rgba(0, 0, 0, 0.6);
+    top: 20px; 
+	opacity: 0;
+}
+
+.main-container:hover .profile-info {
+	opacity: 1;
+	animation: bounceIn 0.6s linear;
+}
+
+@keyframes bounceIn {
+	0%,
+	20%,
+	40%,
+	60%,
+	80%,
+	to {
+		-webkit-animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+		animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+	}
+	0% {
+		opacity: 0;
+		-webkit-transform: scale3d(0.3, 0.3, 0.3);
+		transform: scale3d(0.3, 0.3, 0.3);
+	}
+	20% {
+		-webkit-transform: scale3d(1.03, 1.03, 1.03);
+		transform: scale3d(1.03, 1.03, 1.03);
+	}
+	40% {
+		-webkit-transform: scale3d(0.9, 0.9, 0.9);
+		transform: scale3d(0.9, 0.9, 0.9);
+	}
+	60% {
+		opacity: 1;
+		-webkit-transform: scale3d(1.01, 1.01, 1.01);
+		transform: scale3d(1.01, 1.01, 1.01);
+	}
+	80% {
+		-webkit-transform: scale3d(0.97, 0.97, 0.97);
+		transform: scale3d(0.97, 0.97, 0.97);
+	}
+	to {
+		opacity: 1;
+		-webkit-transform: scaleX(1);
+		transform: scaleX(1);
+	}
+}
+
+/* @keyframes bounce {
+  50% {
+    opacity: 1;
+    transform: scale(1.1);
+  }
+
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+} */
+
+.profile__content {
+	width: 100%;
+	position: absolute;
+	bottom: 0;
+	text-align: center;
+}
+
+.profile__user-name {
+	margin-bottom: 5px;
+}
+
+.profile__user-slogan {
+	color: #999;
+	font-size: 0.9rem;
+	margin-bottom: 20px;
+}
+
+.profile__current-price {
+	color: #69c982;
+	font-size: 1.4rem;
+	font-weight: bold;
+}
+
+.profile__old-price {
+	color: #999;
+	text-decoration: line-through;
+	margin-bottom: 10px;
+}
+
+.profile__buy-btn {
+	cursor: pointer;
+	width: 100%;
+	background: #2f2f2f;
+	color: white;
+	padding: 15px 0;
+	font-size: 1rem;
+	font-weight: bold;
+	text-transform: uppercase;
+	border: 0;
+	border-bottom-left-radius: 5px;
+	border-bottom-right-radius: 5px;
+}
+
+/* profile styles */
+
+.user-welcome{
+    text-align: center;
+    color: #ffff;
+}
+
+
+/* custom card */
+
+.card {
+    position: absolute;
+    border-radius: 8px;
+    height: 450px;
+    width: 400px;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    margin: auto;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    box-shadow: 0 0 80px -10px black;
+    overflow: hidden;
+}
+
+.card-blur {
+    position: absolute;
+    height: 100%;
+    width: calc(100% + 1px);
+    background-color: black;
+    opacity: 0;
+    transition: opacity 0.15s ease-in;
+}
+
+.card:hover .card-blur {
+    opacity: 0.6;
+}
+
+.footer {
+    z-index: 1;
+    position: absolute;
+    height: 80px;
+    width: 100%;
+    bottom: 0;
+}
+
+svg#curve {
+    position: absolute;
+    fill: white;
+    left: 0;
+    bottom: 0;
+    width: 400px;
+    height: 450px;
+}
+
+.connections {
+    height: 80px;
+    width: 400px;
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 100px;
+    margin: auto;
+}
+
+.connection {
+    height: 25px;
+    width: 25px;
+    border-radius: 100%;
+    background-color: white;
+    display: inline-block;
+    padding: 5px;
+    margin-right: 25px;
+    transform: translateY(200px);
+    
+    transition: transform 1s cubic-bezier(.46, 1.48, .18, .81);
+}
+
+.card:hover .connection {
+    transform: translateY(0px);
+}
+
+.info {
+	font-family: Inconsolata;
+    padding-left: 20px;
+    transform: translateY(250px);
+    
+    transition: transform 1s cubic-bezier(.31,1.21,.64,1.02);
+}
+
+.card:hover .info {
+    transform: translateY(0px);
+}
+
+.name {
+    font-weight: bolder;
+    padding-top: 5px;
+}
+
+.job {
+    margin-top: 10px;
+}
+
+.connection.facebook {
+    height: 35px;
+    width: 35px;
+    margin-left: 20px;
+    padding: 0px;
+    border-radius: 100%;
+    overflow: hidden;
+}
+
+.connection.twitter {
+    transition-delay: 0.06s;
+}
+
+.connection.behance {
+    transition-delay: 0.12s;
+}
+
+.connection.facebook .icon {
+    height: 100%;
+    width: 100%;
+    background-position: center;
+    background-size: cover;
+    background-color: black;
+}
+
+.connection.twitter .icon {
+    height: 18px;
+    width: 18px;
+    margin-top: 4px;
+    margin-left: 4px;
+    background-position: center;
+    background-size: cover;
+}
+
+.connection.behance .icon {
+    height: 18px;
+    width: 18px;
+    margin-top: 3px;
+    margin-left: 4px;
+    background-position: center;
+    background-size: cover;
+}
+
+/* create products input */
+
+.products-form{
+    width: 35%;
+    height: 30%;
+    margin-top: 3%;
+    margin-bottom: 5%;
+    margin-left: 32%;
+}
+.products-card-form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding:10% 
+}
+.products-card-content{
+    display: grid;
+    grid-template-rows: repeat(3,1fr);
+    gap: 5%;
+    margin-bottom: 10%;
+    margin-top: -15%;
+}
+.products-card-actions{
+    margin-top: 70%;
+    display: flex;
+}
