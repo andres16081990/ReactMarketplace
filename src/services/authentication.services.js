@@ -1,3 +1,3 @@
-const apidataMarketplace = `http://localhost:3050/api`;
+const apidataMarketplace = process.env.REACT_APP_API_REST;
 
 export default apidataMarketplace
