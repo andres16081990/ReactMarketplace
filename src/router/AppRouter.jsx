@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useState } from 'react'
+import React, { useContext} from 'react'
 
 import {BrowserRouter as Router,Switch,Route} from 'react-router-dom'
 import LogInContainer from '../components/LogInContainer'
@@ -7,14 +7,12 @@ import { AuthContext } from '../Context/AuthContext'
 import PrivateRoute from './PrivateRoute'
 import HomePage from '../pages/HomePage'
 import ProductsPage from '../pages/ProductsPage'
-import UserPrivatePage from '../pages/UserPrivatePage'
-import NavigationContainer from '../components/NavigationContainer'
-import CustomerPrivatePage from '../pages/CustomerPrivatePage'
-import ROLES from '../constants/roles.users'
+import UserPrivatePage from '../pages/UserPrivatePage';
+import NavigationContainer from '../components/NavigationContainer';
+import CustomerPrivatePage from '../pages/CustomerPrivatePage';
 
 
 const AppRouter = () =>{
-
     const {user, roleValidation} = useContext(AuthContext);
     return(<>
         <Router>
@@ -34,12 +32,7 @@ const AppRouter = () =>{
                 </Route>
                 {
                     roleValidation ? <PrivateRoute exact path={'/user'} component={UserPrivatePage} user={user}/>: <PrivateRoute exact path={'/user'} component={CustomerPrivatePage} user={user}/>
-                }
-
-                
-
-                
-                
+                }         
             </Switch>
 
 

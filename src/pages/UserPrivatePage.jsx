@@ -8,7 +8,8 @@ import productsReducer, { initalState } from '../reducers/products.reducer';
 import apidataMarketplace from '../services/authentication.services';
 
 
-const UserPrivatePage = ()=>{    
+const UserPrivatePage = ()=>{   
+     
     const [state, dispatch] = useReducer(productsReducer,initalState); 
     
     const [profile, setProfile] = useState({});    

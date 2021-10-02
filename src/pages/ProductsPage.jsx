@@ -48,7 +48,6 @@ const ProductsPage = ()=>{
             },
         };
         if(pickCategory !== ''){
-
             const getProductsByCategory = async()=>{
                 const productsCategory = `/products/category/`;
                 try {
@@ -59,7 +58,7 @@ const ProductsPage = ()=>{
                     console.log(error)
                 }
             }
-            getProductsByCategory()
+            getProductsByCategory();
         }
 
         if(pickCategory === ''){

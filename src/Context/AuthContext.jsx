@@ -26,7 +26,9 @@ export const AuthContextProvider = ({children}) =>{
             };
             try {
                 const response = await fetch(`${apidataMarketplace}${endPoint}`,options);
+                console.log(response)
                 const data = await response.json();
+                console.log(data)
                 data.forEach(rol=>localStorage.setItem(rol.name,rol._id));
             } catch (error) {
                 setError(error)
@@ -153,7 +155,7 @@ export const AuthContextProvider = ({children}) =>{
     }
 
     
-    if(error) return <div>Ups...error</div>
+    if(error) return <div>Ups...error{error}</div>
     return(
         <AuthContext.Provider value={value} >
             {children}
